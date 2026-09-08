@@ -18,6 +18,12 @@ export const metadata = {
  *
  * Photos already placed in /public as staff-<firstname>.jpg, cropped
  * from the original composite photo.
+ *
+ * NOTE: Photos use object-contain (not object-cover) against a neutral
+ * slate background. Because these are cropped from a composite photo,
+ * their framing isn't identical, so "cover" was zooming/cropping some
+ * faces off-center. "contain" always shows the full, uncropped photo
+ * centered in its box, regardless of the source crop.
  */
 
 const TEAM = [
@@ -107,13 +113,13 @@ export default function BehindTheCurtainPage() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {/* Featured / larger card for the first person */}
             <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-blue-200 hover:shadow-md sm:col-span-2 sm:row-span-2">
-              <div className="relative aspect-[4/5] w-full sm:aspect-[4/4.2]">
+              <div className="relative aspect-[4/5] w-full bg-slate-100 sm:aspect-[4/4.2]">
                 <Image
                   src={featured.photo}
                   alt={featured.name}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
+                  className="object-contain object-center"
                   priority
                 />
               </div>
@@ -133,13 +139,13 @@ export default function BehindTheCurtainPage() {
                 key={member.name}
                 className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-blue-200 hover:shadow-md"
               >
-                <div className="relative aspect-square w-full">
+                <div className="relative aspect-square w-full bg-slate-100">
                   <Image
                     src={member.photo}
                     alt={member.name}
                     fill
                     sizes="(max-width: 768px) 50vw, 25vw"
-                    className="object-cover"
+                    className="object-contain object-center"
                   />
                 </div>
                 <div className="p-4 text-center">

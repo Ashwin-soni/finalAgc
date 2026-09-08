@@ -5,6 +5,9 @@ const APP_STORE_URL = "https://apps.apple.com/app/idXXXXXXXXX";
 const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=co.jarvis.agcl";
 const LEARN_MORE_URL = "/app";
 
+// Real QR code image — place app-qr-code.jpg in your project's /public folder.
+const QR_CODE_IMAGE = "/appqr.jpeg";
+
 const FEATURES = [
   "Live & recorded classes, anywhere",
   "Daily practice tests with instant results",
@@ -62,22 +65,7 @@ export default function AppPromo() {
                 </span>
               </a>
 
-              <a
-                href={APP_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2.5 rounded-xl bg-white px-4 py-2.5 transition-transform hover:scale-[1.03]"
-              >
-                <AppStoreIcon />
-                <span className="text-left leading-tight">
-                  <span className="block text-[10px] text-gray-500">
-                    Download on the
-                  </span>
-                  <span className="block text-sm font-bold text-gray-900">
-                    App Store
-                  </span>
-                </span>
-              </a>
+              
             </div>
 
             {/* Learn more link */}
@@ -90,18 +78,23 @@ export default function AppPromo() {
             </a>
           </div>
 
-          {/* Right: phone mockup with QR code */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              <PhoneMockup />
+          {/* Right: phone mockup + QR code, side by side in the open space */}
+          <div className="flex flex-col items-center justify-center gap-6 sm:flex-row sm:items-center lg:justify-end lg:gap-10">
+            <PhoneMockup />
 
-              {/* QR code card */}
-              <div className="absolute -bottom-4 -left-4 hidden items-center gap-3 rounded-2xl bg-white p-3 shadow-xl sm:flex">
-                <QRCode />
-                <p className="max-w-[110px] text-xs font-semibold leading-snug text-gray-700">
-                  Scan to download the app
-                </p>
+            {/* QR code card — standalone, fully visible, not overlapping the phone */}
+            <div className="flex w-40 flex-col items-center gap-3 rounded-2xl bg-white p-4 text-center shadow-xl">
+              <div className="flex h-28 w-28 items-center justify-center overflow-hidden rounded-xl border border-gray-100 bg-white p-1.5">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={QR_CODE_IMAGE}
+                  alt="Scan to download the app"
+                  className="h-full w-full object-contain"
+                />
               </div>
+              <p className="text-xs font-semibold leading-snug text-gray-700">
+                Scan to download the app
+              </p>
             </div>
           </div>
         </div>
@@ -146,31 +139,6 @@ function AppStoreIcon() {
         d="M14.3 6c.5-.7.9-1.6.8-2.5-.8 0-1.7.5-2.3 1.2-.5.6-1 1.5-.8 2.4.9.1 1.8-.4 2.3-1.1Z"
         fill="#111"
       />
-    </svg>
-  );
-}
-
-function QRCode() {
-  return (
-    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="shrink-0">
-      <rect width="48" height="48" rx="6" fill="#F3F4F6" />
-      <g fill="#111">
-        <rect x="6" y="6" width="12" height="12" rx="2" />
-        <rect x="9" y="9" width="6" height="6" rx="1" fill="#F3F4F6" />
-        <rect x="30" y="6" width="12" height="12" rx="2" />
-        <rect x="33" y="9" width="6" height="6" rx="1" fill="#F3F4F6" />
-        <rect x="6" y="30" width="12" height="12" rx="2" />
-        <rect x="9" y="33" width="6" height="6" rx="1" fill="#F3F4F6" />
-        <rect x="22" y="6" width="4" height="4" />
-        <rect x="22" y="14" width="4" height="4" />
-        <rect x="30" y="22" width="4" height="4" />
-        <rect x="22" y="22" width="4" height="4" />
-        <rect x="22" y="30" width="4" height="4" />
-        <rect x="22" y="38" width="4" height="4" />
-        <rect x="38" y="30" width="4" height="4" />
-        <rect x="30" y="38" width="4" height="4" />
-        <rect x="38" y="38" width="4" height="4" />
-      </g>
     </svg>
   );
 }

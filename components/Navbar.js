@@ -9,7 +9,8 @@ const NAV_LINKS = [
   //{ label: "Online Courses", href: "#online-courses" },
   { label: "Test Series", href: "https://classplusapp.com/" },
   { label: "Results", href: "/Results" },
-  { label: "Study Materials", href: "#study-materials" },
+  { label: "Our Socials", href: "/socials" },
+  // { label: "Study Materials", href: "#study-materials" },
 ];
 
 const MORE_LINKS = [
@@ -79,8 +80,10 @@ export default function Navbar() {
         {/* Right actions */}
         <div className="flex shrink-0 items-center gap-3">
           <a
-            href="tel:+910000000000"
-            aria-label="Call us"
+            href="https://calendly.com/your-team/callback"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Schedule a callback"
             className="hidden h-9 w-9 items-center justify-center rounded-full bg-brand-blue text-white sm:flex"
           >
             <PhoneIcon />

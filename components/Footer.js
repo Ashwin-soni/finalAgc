@@ -4,12 +4,11 @@ const FOOTER_COLUMNS = [
     links: [
       { label: "About us", href: "/about-us" },
       { label: "Blog", href: "/blog" },
-      { label: "Apex News", href: "/news" },
+      
       { label: "Privacy policy", href: "/privacy-policy" },
       { label: "Public notice", href: "/public-notice" },
       { label: "Careers", href: "/careers" },
-      { label: "Dhoni Inspires NEET Aspirants", href: "/dhoni-neet" },
-      { label: "Dhoni Inspires JEE Aspirants", href: "/dhoni-jee" },
+     
     ],
   },
   {
@@ -24,32 +23,22 @@ const FOOTER_COLUMNS = [
   {
     heading: "Popular goals",
     links: [
-      { label: "NEET Coaching", href: "/neet-coaching" },
-      { label: "JEE Coaching", href: "/jee-coaching" },
-      { label: "6th to 10th", href: "/foundation" },
+      { label: "NEET Coaching", href: "/courses" },
+      { label: "JEE Coaching", href: "/courses" },
+      { label: "9th to 12th", href: "/courses" },
     ],
   },
   {
     heading: "Courses",
     links: [
-      { label: "Classroom Courses", href: "/classroom-courses" },
-      { label: "Online Courses", href: "/online-courses" },
-      { label: "Distance Learning", href: "/distance-learning" },
-      { label: "Online Test Series", href: "/online-test-series" },
-      { label: "International Olympiads Online Course", href: "/olympiads" },
-      { label: "NEET Test Series", href: "/neet-test-series" },
-      { label: "JEE Test Series", href: "/jee-test-series" },
-      { label: "JEE Main Test Series", href: "/jee-main-test-series" },
-    ],
-  },
-  {
-    heading: "Centers",
-    links: [
-      { label: "Kota", href: "/centers/kota" },
-      { label: "Bangalore", href: "/centers/bangalore" },
-      { label: "Indore", href: "/centers/indore" },
-      { label: "Delhi", href: "/centers/delhi" },
-      { label: "More centres", href: "/centers" },
+      { label: "Classroom Courses", href: "/courses" },
+      
+     
+     
+      
+      { label: "NEET Test Series", href: "/courses" },
+      { label: "JEE Test Series", href: "/courses" },
+      { label: "JEE Main Test Series", href: "/courses" },
     ],
   },
   {
@@ -59,16 +48,15 @@ const FOOTER_COLUMNS = [
       { label: "JEE Advanced", href: "/jee-advanced" },
       { label: "NEET UG", href: "/neet-ug" },
       { label: "CBSE", href: "/cbse" },
-      { label: "NIOS", href: "/nios" },
+     
       { label: "NCERT Solutions", href: "/ncert-solutions" },
-      { label: "Olympiad", href: "/olympiad" },
+      
       { label: "NEET Mock Test", href: "/neet-mock-test" },
       { label: "NEET Past Years Papers", href: "/neet-past-papers" },
       { label: "NEET Sample Papers", href: "/neet-sample-papers" },
       { label: "NEET Answer Key 2026", href: "/neet-answer-key" },
-      { label: "NEET College Predictor 2026", href: "/neet-college-predictor" },
-      { label: "NEET Rank Predictor 2026", href: "/neet-rank-predictor" },
-      { label: "NEET Cutoff", href: "/neet-cutoff" },
+     
+    
       { label: "NEET Exam Analysis", href: "/neet-exam-analysis" },
       { label: "NEET Revision Notes", href: "/neet-revision-notes" },
     ],
@@ -77,17 +65,17 @@ const FOOTER_COLUMNS = [
 
 const SOCIAL_LINKS = [
   { label: "YouTube", href: "https://www.youtube.com/@agcjabalpur2334", icon: <YouTubeIcon /> },
-  { label: "Instagram", href: "https://instagram.com", icon: <InstagramIcon /> },
-  { label: "Facebook", href: "https://facebook.com", icon: <FacebookIcon /> },
-  { label: "X", href: "https://x.com", icon: <XIcon /> },
-  { label: "LinkedIn", href: "https://linkedin.com", icon: <LinkedInIcon /> },
+  { label: "Instagram", href: "https://www.instagram.com/agcjabalpur/?hl=en", icon: <InstagramIcon /> },
+  { label: "Facebook", href: "https://www.facebook.com/AGCJabalpur/", icon: <FacebookIcon /> },
+  // { label: "X", href: "https://x.com", icon: <XIcon /> },
+  // { label: "LinkedIn", href: "https://linkedin.com", icon: <LinkedInIcon /> },
 ];
 
 export default function Footer() {
   return (
     <footer className="bg-[#edf2fa] border-t border-gray-300 pt-12 pb-12">
       <div className="mx-auto max-w-container px-4 py-12 lg:px-8">
-        <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
           {FOOTER_COLUMNS.map((col) => (
             <div key={col.heading}>
               <h3 className="text-sm font-bold text-gray-900">{col.heading}</h3>
@@ -127,12 +115,12 @@ export default function Footer() {
               ))}
             </div>
             <p className="mt-4 text-sm text-gray-600">
-              Awanish Gupta Classes Pvt. Ltd. © All Rights Reserved.
+              Awanish Gupta Classes © All Rights Reserved.
             </p>
           </div>
 
           {/* ISO badge */}
-          <ISOBadge />
+          {/* <ISOBadge /> */}
         </div>
       </div>
     </footer>

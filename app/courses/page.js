@@ -45,7 +45,7 @@ function Hero() {
             <div className="flex gap-4">
               <span className="text-2xl">🏆</span>
               <p className="text-gray-700 text-lg">
-                JEE/NEET Online Coaching by ALLEN Online helps you secure{" "}
+                JEE/NEET Online Coaching by AGC helps you secure{" "}
                 <a href="#" className="text-[#1453B8] font-semibold">
                   Top ranks.
                 </a>
@@ -54,8 +54,8 @@ function Hero() {
             <div className="flex gap-4">
               <span className="text-2xl">🥇</span>
               <p className="text-gray-700 text-lg">
-                With 36 years of expertise, live classes from AGJ Jabalpur
-                faculty, and the best study materials, AGJ Online sets you
+                With 36 years of expertise, live classes from AGC Jabalpur
+                faculty, and the best study materials, AGC Online sets you
                 up for{" "}
                 <a href="#" className="text-[#0E8A6D] font-semibold">
                   JEE/NEET success.
@@ -72,7 +72,7 @@ function Hero() {
             </a>
             <a href="https://calendly.com/your-team/callback">
               <button className="px-6 py-3 rounded-full bg-[#1453B8] text-white font-bold">
-                Contact US
+                Contact Us
               </button>
             </a>
           </div>
@@ -98,33 +98,33 @@ function Hero() {
    Stats Section
 ============================================================ */
 const statsToppers = [
-  { name: "Peeyush Ranjan Panda", air: "AIR 64", img: "/resultimg1.PNG" },
-  { name: "Yashwardhan", air: "AIR 11", img: "/resultimg1.PNG" },
-  { name: "Arth Kumar Maurya", air: "AIR 422", img: "/resultimg1.PNG" },
+  { name: "Anubhav Yadav", air: "IITB", img: "/IIT Mumbai Anubhav Yadav.PNG" },
+  { name: "Kriti Agrawal", air: "IITB", img: "/IIT Mumbai Kriti Agrawal.PNG" },
+  { name: "Priyansh Seth", air: "IITKGP", img: "/IIT Kharagpur Priyansh Seth.PNG" },
 ];
 
 const results = [
   {
-    value: "25,708",
+    value: "400",
     label: "Eligible in JEE Main",
     barColor: "bg-[#0E8A6D]",
     valueColor: "text-[#0E8A6D]",
   },
   {
-    value: "9,045",
-    label: "Qualified in JEE Advanced",
+    value: "200",
+    label: "Qualified in JEE Main",
     barColor: "bg-[#1453B8]",
     valueColor: "text-[#1453B8]",
   },
   {
     value: "45",
-    label: "Students in top 100",
+    label: "Eligible in NEET",
     barColor: "bg-[#1453B8]",
     valueColor: "text-[#1453B8]",
   },
   {
     value: "80",
-    label: "Students in top 200",
+    label: "Qualified in NEET",
     barColor: "bg-[#0E8A6D]",
     valueColor: "text-[#0E8A6D]",
   },
@@ -155,10 +155,11 @@ function StatsSection() {
               </div>
             ))}
           </div>
-
+          <a href="/Results">
           <button className="mt-auto w-full py-3 rounded-full border-2 border-[#1453B8] text-[#1453B8] font-bold">
             See JEE Results
           </button>
+          </a>
         </div>
 
         {/* Results card */}
@@ -195,11 +196,12 @@ const slides = [
     heading1: "Hum sirf padhate nahi,",
     heading2: "champions banaate hain.",
     ctaLabel: "Check Results",
-    toppers: [
-      { name: "Arunav V. Agrahari", location: "Uttar Pradesh", air: "223", img: "/resultimg1.PNG" },
-      { name: "Yashwardhan", location: "Rajasthan", air: "52", img: "/resultimg1.PNG" },
-      { name: "Peeyush R. Panda", location: "Odisha", air: "297", img: "/resultimg1.PNG" },
-    ],
+    ctaHref: "/Results",
+    // toppers: [
+      // { name: "Arunav V. Agrahari", location: "Uttar Pradesh", air: "223", img: "/resultimg1.PNG" },
+      // { name: "Yashwardhan", location: "Rajasthan", air: "52", img: "/resultimg1.PNG" },
+      // { name: "Peeyush R. Panda", location: "Odisha", air: "297", img: "/resultimg1.PNG" },
+    // ],
   },
   {
     id: 2,
@@ -207,11 +209,12 @@ const slides = [
     heading1: "Hum sirf padhate nahi,",
     heading2: "IIT ko possible banaate hain.",
     ctaLabel: "Enroll Now",
-    toppers: [
-      { name: "Riya Sharma", location: "Delhi", air: "18", img: "/resultimg1.PNG" },
-      { name: "Kabir Mehta", location: "Maharashtra", air: "91", img: "/resultimg1.PNG" },
-      { name: "Saanvi Iyer", location: "Karnataka", air: "134", img: "/resultimg1.PNG" },
-    ],
+    ctaHref: "https://calendly.com/your-team/callback",
+    // toppers: [
+      // { name: "Riya Sharma", location: "Delhi", air: "18", img: "/resultimg1.PNG" },
+      // { name: "Kabir Mehta", location: "Maharashtra", air: "91", img: "/resultimg1.PNG" },
+      // { name: "Saanvi Iyer", location: "Karnataka", air: "134", img: "/resultimg1.PNG" },
+    // ],
   },
 ];
 
@@ -242,36 +245,51 @@ function ResultsCarousel() {
           >
             {slides.map((slide) => (
               <div key={slide.id} className="w-full flex-shrink-0">
-                <div className="relative bg-[#F2EFE9] aspect-[16/7]">
+                <div className="relative aspect-[16/7]">
+                  <Image
+                    src="/agc-building-carousel.png"
+                    alt="Awanish Gupta Classes building"
+                    fill
+                    priority={slide.id === 1}
+                    className="object-cover"
+                    sizes="(max-width: 1280px) 100vw, 1280px"
+                  />
+                  <div className="absolute inset-0 bg-[#061a32]/55" />
+
                   {/* Logo badge */}
-                  <div className="absolute top-6 left-8 flex items-center gap-2 bg-[#0B1F4D] text-white text-xs font-bold px-3 py-1.5 rounded">
+                  <div className="absolute top-6 left-8 z-10 flex items-center gap-2 bg-[#0B1F4D] text-white text-xs font-bold px-3 py-1.5 rounded">
                     <span>AGC ONLINE</span>
                     <span className="font-normal opacity-80">JEE ADV. 2026</span>
                   </div>
 
                   {/* Result-card chip top right */}
-                  <div className="absolute top-6 right-8 bg-[#0B1F4D] text-white text-[10px] text-center px-3 py-2 rounded leading-tight">
+                  {/* <div className="absolute top-6 right-8 bg-[#0B1F4D] text-white text-[10px] text-center px-3 py-2 rounded leading-tight">
                     Official Results
                     <br />
                     Validated by EY
-                  </div>
+                  </div> */}
 
                   {/* Main copy */}
-                  <div className="absolute top-24 left-8 max-w-md">
+                  <div className="absolute top-24 left-8 z-10 max-w-md">
                     <span className="inline-block bg-lime-300 text-[#0B1F4D] font-extrabold text-lg px-4 py-1.5 rounded mb-5">
                       {slide.badgeText}
                     </span>
-                    <p className="text-xl text-gray-800">{slide.heading1}</p>
-                    <p className="text-3xl font-extrabold text-[#1453B8] leading-snug mb-6">
+                    <p className="text-xl text-white">{slide.heading1}</p>
+                    <p className="text-3xl font-extrabold text-white leading-snug mb-6">
                       {slide.heading2}
                     </p>
-                    <button className="px-6 py-3 rounded-full bg-[#1453B8] text-white font-bold">
+                    <a
+                      href={slide.ctaHref}
+                      target={slide.ctaHref.startsWith("http") ? "_blank" : undefined}
+                      rel={slide.ctaHref.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="inline-block px-6 py-3 rounded-full bg-[#1453B8] text-white font-bold"
+                    >
                       {slide.ctaLabel}
-                    </button>
+                    </a>
                   </div>
 
                   {/* Topper photo cards */}
-                  <div className="absolute bottom-0 right-8 flex gap-2 items-end">
+                  {/* <div className="absolute bottom-0 right-8 flex gap-2 items-end">
                     {slide.toppers.map((t) => (
                       <div
                         key={t.name}
@@ -292,7 +310,7 @@ function ResultsCarousel() {
                         </div>
                       </div>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}
@@ -325,7 +343,7 @@ function ResultsCarousel() {
    for all, and price shows a "Contact for Fees" placeholder —
    swap in real pricing whenever you have it.
 ============================================================ */
-const tabs = [
+const allTabs = [
   {
     id: "class-9",
     label: "Class 9",
@@ -458,6 +476,10 @@ const tabs = [
   },
 ];
 
+const tabs = ["jee", "neet", "class-9", "class-10", "class-11", "class-12"].map((id) =>
+  allTabs.find((tab) => tab.id === id)
+);
+
 function CourseCard({ course }) {
   const isLive = course.mode === "LIVE";
   return (
@@ -488,17 +510,22 @@ function CourseCard({ course }) {
 
       <div className="flex items-center justify-between px-4 py-4 mt-2 border-t border-gray-100">
         <span className="text-lg font-extrabold text-gray-900">{course.price}</span>
-        <button className="flex items-center gap-1 text-[#1453B8] font-bold text-sm">
+        <a
+          href="https://calendly.com/your-team/callback"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1 text-[#1453B8] font-bold text-sm"
+        >
           Know More
           <ChevronRight size={15} />
-        </button>
+        </a>
       </div>
     </div>
   );
 }
 
 function CoursesSection() {
-  const [activeTab, setActiveTab] = useState(tabs[0].id); // default Class 9
+  const [activeTab, setActiveTab] = useState(tabs[0].id); // default JEE
 
   const currentTab = tabs.find((t) => t.id === activeTab) ?? tabs[0];
 
@@ -546,36 +573,36 @@ const TESTIMONIALS = [
   {
     quote:
       "The LIVE classes were so engaging that it was super easy to always stay focused. The teachers were always there to resolve my doubts in no time! I felt empowered & confident.",
-    name: "Aritro Ray",
-    meta: "AIR 50, JEE'25, IIT Bombay",
+    name: "Anubha Yadav",
+    meta: "IIT Bombay",
     photo: "https://picsum.photos/id/1012/100/100",
   },
   {
     quote:
-      "I got to stay home with my family & aced my JEE prep with Apex Online. My favourite feature was the Improvement Book, which helped track & fix all my mistakes.",
-    name: "Arka Banerjee",
-    meta: "AIR 395, JEE'25, IIT Kharagpur",
+      "I got to stay home with my family & aced my JEE prep with AGC. My favourite feature was the Improvement Book, which helped track & fix all my mistakes.",
+    name: "Priyansh Seth",
+    meta: "IIT Kharagpur",
     photo: "https://picsum.photos/id/1027/100/100",
   },
   {
     quote:
-      "I wanted to stay close to family & avoid travel. Apex Online's LIVE classes, NCERT-based study material & quick doubt-solving helped me crack NEET with AIR 74. Best decision ever!",
-    name: "Tanmay Jagga",
-    meta: "AIR 74, NEET-UG 2025",
+      "I wanted to stay close to family & avoid travel. AGC LIVE classes, NCERT-based study material & quick doubt-solving helped me crack NEET with AIR 74. Best decision ever!",
+    name: "Nishant Jain",
+    meta: "IIT Kanpur",
     photo: "https://picsum.photos/id/1005/100/100",
   },
   {
     quote:
-      "Apex's track record gave me confidence. The LIVE online classes, regular tests with analysis & strong support helped me stay focused & improve steadily. It was the discipline I needed.",
-    name: "Debarghya Bag",
-    meta: "AIR 247, NEET-UG 2025",
+      "AGC track record gave me confidence. The LIVE online classes, regular tests with analysis & strong support helped me stay focused & improve steadily. It was the discipline I needed.",
+    name: "Kavya Sahu",
+    meta: "IIT BHU",
     photo: "https://picsum.photos/id/1011/100/100",
   },
   {
     quote:
-      "The structured schedule and doubt sessions kept me on track even during my toughest weeks. I couldn't have scored this without Apex Online.",
-    name: "Priya Sharma",
-    meta: "AIR 980, JEE'25, IIT Delhi",
+      "The structured schedule and doubt sessions kept me on track even during my toughest weeks. I couldn't have scored this without AGC.",
+    name: "Paresh Agrawal",
+    meta: "IIT Dhanbad",
     photo: "https://picsum.photos/id/1025/100/100",
   },
 ];
@@ -672,14 +699,14 @@ const features = [
     emoji: "👩‍🏫",
     title: "Study with AGC's top faculty from Kota",
     description:
-      "Daily live interactive classes led by ALLEN's national-level faculty, who have mentored countless AIR #1 and thousands of students who have made it to India's top IITs.",
+      "Daily live interactive classes led by AGC's national-level faculty, who have mentored countless AIR #1 and thousands of students who have made it to India's top IITs.",
   },
   {
     id: "rank",
     emoji: "📊",
     title: "Know where you stand against competition",
     description:
-      "Get detailed test insights and see how you compare with ALLEN students across India through national-level benchmarking.",
+      "Get detailed test insights and see how you compare with AGC'S students across India through national-level benchmarking.",
   },
   {
     id: "practice",
@@ -782,22 +809,22 @@ function StoreTile({ label, rating, reviews, href, icon }) {
 }
 
 function AppDownloadCard({
-  appName = "Apex",
-  qrCodeImage = "/resultimg1.PNG",
+  appName = "AGC",
+  qrCodeImage = "/appqr.jpeg",
   playStore = {
-    url: "https://play.google.com/store/apps/details?id=com.yourapp",
-    rating: "4.1",
-    reviews: "9k+ Reviews",
+    url: "https://play.google.com/store/apps/details?id=co.jarvis.agcl",
+    rating: "4.8✨",
+    // reviews: "9k+ Reviews",
   },
   appStore = {
     url: "https://apps.apple.com/app/idXXXXXXXXX",
     rating: "4.3",
-    reviews: "308 Reviews",
+    // reviews: "308 Reviews",
   },
 }) {
   return (
     <section className="bg-[#edf2fa] px-4 py-10 sm:py-14">
-      <div className="mx-auto max-w-3xl rounded-3xl bg-white p-6 shadow-sm sm:p-8">
+      <div className="mx-auto max-w-xl rounded-3xl bg-white p-6 shadow-sm sm:p-8">
         <h2 className="text-center text-xl font-bold text-gray-900 sm:text-2xl">
           Download the <span className="text-brand-blue">{appName} app</span> now!
         </h2>
@@ -816,19 +843,19 @@ function AppDownloadCard({
           <StoreTile
             label="Playstore"
             rating={playStore.rating}
-            reviews={playStore.reviews}
+            // reviews={playStore.reviews}
             href={playStore.url}
             icon={<PlayStoreIcon />}
           />
 
           {/* Appstore rating */}
-          <StoreTile
+          {/* <StoreTile
             label="Appstore"
             rating={appStore.rating}
-            reviews={appStore.reviews}
+            // reviews={appStore.reviews}
             href={appStore.url}
             icon={<AppStoreIcon />}
-          />
+          /> */}
         </div>
       </div>
     </section>

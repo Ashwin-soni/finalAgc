@@ -5,11 +5,11 @@ import { useRef } from "react";
 
 // Replace these with your own image paths/URLs
 const IMAGES = [
-  "/resultimg.jpg",
-  "/IIT Mumbai Shrestha Gupta.png",
-  "https://picsum.photos/id/1025/600/400",
-  "https://picsum.photos/id/1035/600/400",
-  "https://picsum.photos/id/1043/600/400",
+  "/whatstrend1.png",
+  "/whatstrend3.jpg",
+  "/whatstrend2.png",
+  "/whatstrend4.jpg",
+  "/whatstrend5.jpg",
 ];
 
 export default function ImageScroller() {

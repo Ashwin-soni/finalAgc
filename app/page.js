@@ -11,6 +11,7 @@ import AppPromo from "../components/AppPromo";
 import Footer from "../components/Footer";
 
 import OurLocationSection from "../components/OurLocationSection";
+import GoogleReviews from "../components/GoogleReviews";
 
 export default function HomePage() {
   return (
@@ -30,7 +31,8 @@ export default function HomePage() {
       <MeetOurStars/>
       <ChampionCourses/>
       <RequestCallback/>
-      <VideoTestimonials/>
+      {/* <VideoTestimonials/> */}
+      <GoogleReviews/>
       <AppPromo/>
       <OurLocationSection/>
       <Footer/>
