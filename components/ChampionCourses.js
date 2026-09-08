@@ -8,8 +8,7 @@ const FILTERS = ["JEE", "NEET", "Classes 9-12"];
 // The brochure lists one course per class (no live/recorded split,
 // no fees/dates/language), so duration/language/startedFrom below
 // are placeholders in the same style as before — swap in real
-// values whenever you have them. Student testimonials are also
-// placeholders; replace `avatar`/name/rank with real photos & data.
+// values whenever you have them.
 const COURSES = {
   JEE: [
     {
@@ -19,12 +18,6 @@ const COURSES = {
       duration: "2 Years",
       language: "Hinglish, English",
       startedFrom: "15 Dec, 2025",
-      student: {
-        name: "Chirag Singh",
-        rank: "AIR 516",
-        note: "Chose this course | JEE Adv. 2025 | IIT Delhi",
-        avatar: "https://picsum.photos/id/1012/100/100",
-      },
     },
   ],
   NEET: [
@@ -35,12 +28,6 @@ const COURSES = {
       duration: "2 Years",
       language: "Hinglish, English",
       startedFrom: "20 Dec, 2025",
-      student: {
-        name: "Priya Sharma",
-        rank: "AIR 1341",
-        note: "Chose this course | NEET-UG 2025 | AIIMS Delhi",
-        avatar: "https://picsum.photos/id/1005/100/100",
-      },
     },
   ],
   "Classes 9-12": [
@@ -51,12 +38,6 @@ const COURSES = {
       duration: "1 Year",
       language: "Hinglish, English",
       startedFrom: "05 Jan, 2026",
-      student: {
-        name: "Kabir Mehta",
-        rank: "Silver 🥈",
-        note: "Chose this course | IESO 2025",
-        avatar: "https://picsum.photos/id/1013/100/100",
-      },
     },
     {
       badge: "Live Course",
@@ -65,12 +46,6 @@ const COURSES = {
       duration: "1 Year",
       language: "Hinglish, English",
       startedFrom: "18 Jan, 2026",
-      student: {
-        name: "Naveen Iyer",
-        rank: "99.4%",
-        note: "Chose this course | CBSE 10th, 2025",
-        avatar: "https://picsum.photos/id/1006/100/100",
-      },
     },
     {
       badge: "Live Course",
@@ -79,12 +54,6 @@ const COURSES = {
       duration: "1 Year",
       language: "Hinglish, English",
       startedFrom: "10 Jan, 2026",
-      student: {
-        name: "Ishaan Kapoor",
-        rank: "Topper 🏅",
-        note: "Chose this course | School Toppers List 2025",
-        avatar: "https://picsum.photos/id/1025/100/100",
-      },
     },
     {
       badge: "Live Course",
@@ -93,12 +62,6 @@ const COURSES = {
       duration: "1 Year",
       language: "Hinglish, English",
       startedFrom: "22 Jan, 2026",
-      student: {
-        name: "Ananya Verma",
-        rank: "97.8%",
-        note: "Chose this course | CBSE 12th, 2025",
-        avatar: "https://picsum.photos/id/1011/100/100",
-      },
     },
   ],
 };
@@ -180,25 +143,6 @@ function CourseCard({ course }) {
         <button className="mt-6 w-full rounded-md bg-brand-blue py-3 text-sm font-bold text-white transition-colors hover:bg-blue-700 sm:w-auto sm:px-10">
           Enroll now
         </button>
-      </div>
-
-      {/* student strip */}
-      <div className="mt-7 flex items-center gap-3 border-t border-gray-100 px-6 py-4">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={course.student.avatar}
-          alt={course.student.name}
-          className="h-10 w-10 shrink-0 rounded-full object-cover"
-        />
-        <div>
-          <p className="flex items-center gap-2 text-sm font-bold text-gray-900">
-            {course.student.name}
-            <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-bold text-emerald-700">
-              {course.student.rank}
-            </span>
-          </p>
-          <p className="mt-0.5 text-xs text-gray-500">{course.student.note}</p>
-        </div>
       </div>
     </div>
   );
